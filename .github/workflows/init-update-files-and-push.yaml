@@ -14,13 +14,13 @@ on:
         required: true
       categoryApp:
         description: 'Categorie de l application'
-        required: true
+        required: false
       longDescriptionApp:
         description: 'Description longue de l application'
-        required: true
+        required: false
       shortDescriptionApp:
         description: 'Description courte de l application'
-        required: true
+        required: false
 
 permissions:
   contents: write
