@@ -68,10 +68,11 @@ jobs:
       - name: Commit changes
         run: |
           git fetch origin
-          git pull origin develop --rebase
           git add .
           git commit -m "feat: update files with ${{ inputs.customerName }}-${{ inputs.projectName }}" || echo "No changes to commit"
+          git pull origin develop --rebase
           git push origin develop
+
 
       - name: Force staging to match develop
         run: |
