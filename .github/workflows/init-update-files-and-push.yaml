@@ -64,12 +64,13 @@ jobs:
           sed -i "s/ExampleLongDescriptionApp/${{ inputs.longDescriptionApp }}/g" src-tauri/tauri.conf.json
           sed -i "s/ExampleShortDescriptionApp/${{ inputs.shortDescriptionApp }}/g" src-tauri/tauri.conf.json
           sed -i "s/ExampleCategoryApplication/${{ inputs.categoryApp }}/g" src-tauri/tauri.conf.json
-
+          
       - name: Commit changes
         run: |
           git fetch origin
+          git pull origin develop --rebase
           git add .
-          git commit -m "feat: update files with ${{ inputs.customerName }}-${{ inputs.projectName }}"
+          git commit -m "feat: update files with ${{ inputs.customerName }}-${{ inputs.projectName }}" || echo "No changes to commit"
           git push origin develop
 
       - name: Force staging to match develop
