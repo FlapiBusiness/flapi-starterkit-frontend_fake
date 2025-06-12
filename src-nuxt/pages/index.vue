@@ -4,7 +4,7 @@
       v-for="(component, index) in components"
       :key="index"
       :is="getComponentName(component.name)"
-      v-bind="component.data"
+      v-bind="component.data.props"
     />
   </div>
 </template>

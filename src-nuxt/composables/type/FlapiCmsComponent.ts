@@ -1,3 +1,5 @@
+import type { CmsComponentSkeleton } from '~/components/type/CmsComponentSkeleton'
+
 /**
  * FlapiCmsComponent interface definition
  * @description This interface defines the structure of a component's metadata in the Flapi system.
@@ -56,6 +58,7 @@ export type DefaultValue = {
  */
 export type FlapiSlot = {
   name: string
+  components?: CmsComponentSkeleton[]
   scoped?: boolean
   bindings?: FlapiBinding[]
 }
@@ -93,7 +96,7 @@ export type FlapiEvent = {
  */
 export type FlapiType = {
   name?: string
-  names: string[]
+  names?: string[]
   elements?: FlapiElement[]
 }
 

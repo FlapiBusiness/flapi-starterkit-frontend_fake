@@ -67,6 +67,7 @@ export type FlapiCmsComponentCardProps = {
   category: string
   slots?: FlapiSlot[]
   events?: FlapiEvent[]
+  imageUrl?: string
 }
 
 const props: FlapiCmsComponentCardProps = defineProps({
@@ -105,6 +106,10 @@ const props: FlapiCmsComponentCardProps = defineProps({
      * @returns {FlapiEvent[]} Event[]
      */
     default: (): Event[] => [],
+  },
+  imageUrl: {
+    type: String,
+    default: null,
   },
 })
 

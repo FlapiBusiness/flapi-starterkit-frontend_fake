@@ -1,5 +1,7 @@
 <template>
-  <div class="flex max-h-[80vh] w-full min-w-[1200px] max-w-2xl flex-col gap-4 overflow-y-auto text-light-400">
+  <div
+    class="sm:min-w-sm flex max-h-[80vh] w-full max-w-2xl flex-col gap-4 overflow-y-auto text-light-400 md:min-w-[500px] md:max-w-3xl lg:min-w-[1000px] lg:max-w-4xl"
+  >
     <div class="felx-row flex items-center">
       <h1 class="text-xl font-medium text-light-400">{{ component.name }}</h1>
       <span class="text-xs m-4 rounded bg-indigo-100 px-2 py-1 font-medium text-indigo-800">
@@ -27,27 +29,42 @@
           </div>
 
           <FlapiInput
-            v-if="prop.type.name !== 'boolean' && prop.type.name !== 'color' && !prop.type.elements?.length"
-            v-model:value="formValues[prop.name]"
+            v-if="
+              prop.type.name !== 'boolean' &&
+              prop.type.name !== 'color' &&
+              prop.type.name !== '(typeof iconsList)[number]' &&
+              !prop.type.elements?.length
+            "
+            v-model:value="formValues.props[prop.name]"
             :label="prop.name"
             :placeholder="prop.defaultValue ? getDefaultValue(prop.defaultValue) : ''"
             type="text"
           />
 
+          <select
+            v-if="prop.type.name === '(typeof iconsList)[number]'"
+            v-model="formValues.props[prop.name]"
+            class="relative flex h-12 w-full items-center justify-center rounded-md border-2 border-transparent bg-gray-400 pl-3 text-base text-light-400 placeholder:text-light-300 hover:border-light-300 focus:border-primary-400 focus:bg-gray-500"
+          >
+            <option v-for="option in iconsList" :key="option" :value="option">
+              {{ option }}
+            </option>
+          </select>
+
           <div v-if="prop.type.name === 'boolean'" class="flex flex-row items-center gap-2">
             <div class="text-sm font-medium text-white">{{ prop.name }}</div>
-            <FlapiCheckbox v-model:checked="formValues[prop.name]" :label="prop.name" />
+            <FlapiCheckbox v-model:checked="formValues.props[prop.name]" :label="prop.name" />
           </div>
 
           <!-- Color Picker TODO: Uncomment when FlapiColorPicker is available -->
           <!-- <div v-else-if="prop.name.includes('Color')" class="flex items-center gap-2">
             <div class="text-sm font-medium text-white">FlapiColorPicker</div>
-            <FlapiColorPicker :id="`color-picker-${index}`" v-model:value="formValues[prop.name]" :label="prop.name" />
+            <FlapiColorPicker :id="`color-picker-${index}`" v-model:value="formValues.props[prop.name]" :label="prop.name" />
           </div> -->
 
           <FlapiSelect
             v-else-if="prop.type.elements?.length"
-            v-model:value="formValues[prop.name]"
+            v-model:value="formValues.props[prop.name]"
             :label="prop.name"
             :options="prop.type.elements.map((el) => ({ value: el.name, label: el.name }))"
           />
@@ -74,6 +91,9 @@ import { ref } from 'vue'
 import type { Ref } from 'vue'
 import type { FlapiProp, DefaultValue, FlapiCmsComponent } from '~/composables/type/FlapiCmsComponent'
 import FlapiCheckbox from '../inputs/FlapiCheckbox.vue'
+import ListeIcons from '~/assets/icons/liste.json'
+
+const iconsList: string[] = ListeIcons as string[]
 
 /**
  * @description
@@ -96,7 +116,14 @@ const props: FlapiFormProps = defineProps({
   },
 })
 
-const formValues: Ref = ref<Record<string, any>>({})
+const formValues: Ref<Record<string, any>> = ref({
+  name: props.component.name,
+  description: props.component.description || '',
+  props: {},
+  slots: props.component.slots || {},
+  index: props.index || -1,
+  category: props.component.category || '',
+})
 
 /**
  * @description
@@ -116,9 +143,9 @@ const getDefaultValue: (defaultValue: DefaultValue) => any = (defaultValue: Defa
   if (defaultValue.value === 'false') return false
   if (defaultValue.value === 'null') return null
 
-  if (!isNaN(Number(defaultValue.value))) {
-    return Number(defaultValue.value)
-  }
+  // if (!isNaN(Number(defaultValue.value))) {
+  //   return Number(defaultValue.value)
+  // }
 
   return defaultValue.value
 }
@@ -133,27 +160,25 @@ const emit: (event: 'submit', values: Record<string, any>) => void = defineEmits
  * It validates the form values and emits the 'submit' event with the values.
  */
 const submit: () => void = () => {
-  for (const key in formValues.value) {
-    if (formValues.value[key] === undefined || formValues.value[key] === null) {
-      formValues.value[key] = ''
-    }
-  }
+  // for (const key in formValues.value) {
+  //   if (formValues.value[key] === undefined || formValues.value[key] === null) {
+  //     formValues.value[key] = ''
+  //   }
+  // }
+
+  console.log('Form submitted with values:', JSON.stringify(formValues.value, null, 2))
 
   emit('submit', formValues.value)
 }
 
 onMounted(() => {
-  formValues.value = props.component.props?.reduce((acc: Record<string, any>, prop: FlapiProp) => {
-    acc[prop.name] = prop.defaultValue ? getDefaultValue(prop.defaultValue) : ''
+  formValues.value.props = props.component.props?.reduce((acc: Record<string, any>, prop: FlapiProp) => {
+    if (prop.type.name === '(typeof iconsList)[number]') {
+      acc[prop.name] = prop.defaultValue ? getDefaultValue(prop.defaultValue) : 'Account'
+    } else {
+      acc[prop.name] = prop.defaultValue ? getDefaultValue(prop.defaultValue) : ''
+    }
     return acc
   }, {})
-
-  props.component.props?.forEach((prop: FlapiProp) => {
-    if (prop.defaultValue) {
-      console.log('Initializing prop:', prop.name, 'with default value:', getDefaultValue(prop.defaultValue))
-    } else {
-      console.log('No default value for prop:', prop.name)
-    }
-  })
 })
 </script>

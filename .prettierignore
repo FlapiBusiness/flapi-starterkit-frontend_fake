@@ -50,3 +50,7 @@ cypress/downloads
 # Android / iOS
 android/
 ios/
+
+# JSON
+components-meta.json
+src-nuxt/assets/icons/liste.json

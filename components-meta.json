@@ -319,7 +319,9 @@
       {
         "name": "update:value",
         "type": {
-          "names": ["union"],
+          "names": [
+            "union"
+          ],
           "elements": [
             {
               "name": "string"
@@ -437,7 +439,9 @@
       {
         "name": "update:modelValue",
         "type": {
-          "names": ["FlapiSelectOption"]
+          "names": [
+            "FlapiSelectOption"
+          ]
         }
       }
     ],
@@ -546,13 +550,17 @@
       {
         "name": "update:searchTerms",
         "type": {
-          "names": ["string"]
+          "names": [
+            "string"
+          ]
         }
       },
       {
         "name": "click",
         "type": {
-          "names": ["string"]
+          "names": [
+            "string"
+          ]
         }
       }
     ],
@@ -725,17 +733,21 @@
       {
         "name": "update:expand",
         "type": {
-          "names": ["boolean"]
+          "names": [
+            "boolean"
+          ]
         }
       },
       {
         "name": "update:activePath",
         "type": {
-          "names": ["string"]
+          "names": [
+            "string"
+          ]
         }
       }
     ],
-    "category": "flapi/FlapiSidebar"
+    "category": "flapi\\FlapiSidebar"
   },
   {
     "name": "FlapiSidebarLink",
@@ -802,7 +814,7 @@
         }
       }
     ],
-    "category": "flapi/FlapiSidebar"
+    "category": "flapi\\FlapiSidebar"
   },
   {
     "name": "FlapiSidebarToggleButton",
@@ -820,211 +832,13 @@
       {
         "name": "update:expand",
         "type": {
-          "names": ["boolean"]
+          "names": [
+            "boolean"
+          ]
         }
       }
     ],
-    "category": "flapi/FlapiSidebar"
-  },
-  {
-    "name": "Account",
-    "description": "",
-    "category": "icons"
-  },
-  {
-    "name": "Activity",
-    "description": "",
-    "category": "icons"
-  },
-  {
-    "name": "AlertCircle",
-    "description": "",
-    "category": "icons"
-  },
-  {
-    "name": "ArrowRight",
-    "description": "",
-    "category": "icons"
-  },
-  {
-    "name": "ArrowUpRight",
-    "description": "",
-    "category": "icons"
-  },
-  {
-    "name": "BarChart",
-    "description": "",
-    "category": "icons"
-  },
-  {
-    "name": "BriefCase",
-    "description": "",
-    "category": "icons"
-  },
-  {
-    "name": "CheckCircle",
-    "description": "",
-    "category": "icons"
-  },
-  {
-    "name": "ChevronLeft",
-    "description": "",
-    "category": "icons"
-  },
-  {
-    "name": "ChevronRight",
-    "description": "",
-    "category": "icons"
-  },
-  {
-    "name": "Clock",
-    "description": "",
-    "category": "icons"
-  },
-  {
-    "name": "Database",
-    "description": "",
-    "category": "icons"
-  },
-  {
-    "name": "Edit",
-    "description": "",
-    "category": "icons"
-  },
-  {
-    "name": "Eye",
-    "description": "",
-    "category": "icons"
-  },
-  {
-    "name": "EyeOff",
-    "description": "",
-    "category": "icons"
-  },
-  {
-    "name": "Grid",
-    "description": "",
-    "category": "icons"
-  },
-  {
-    "name": "Headphones",
-    "description": "",
-    "category": "icons"
-  },
-  {
-    "name": "Home",
-    "description": "",
-    "category": "icons"
-  },
-  {
-    "name": "Info",
-    "description": "",
-    "category": "icons"
-  },
-  {
-    "name": "Link",
-    "description": "",
-    "category": "icons"
-  },
-  {
-    "name": "List",
-    "description": "",
-    "category": "icons"
-  },
-  {
-    "name": "Lock",
-    "description": "",
-    "category": "icons"
-  },
-  {
-    "name": "Login",
-    "description": "",
-    "category": "icons"
-  },
-  {
-    "name": "Logout",
-    "description": "",
-    "category": "icons"
-  },
-  {
-    "name": "Mail",
-    "description": "",
-    "category": "icons"
-  },
-  {
-    "name": "MessageCircle",
-    "description": "",
-    "category": "icons"
-  },
-  {
-    "name": "MoreHorizontal",
-    "description": "",
-    "category": "icons"
-  },
-  {
-    "name": "PeopleGroup",
-    "description": "",
-    "category": "icons"
-  },
-  {
-    "name": "PlusCircle",
-    "description": "",
-    "category": "icons"
-  },
-  {
-    "name": "Search",
-    "description": "",
-    "category": "icons"
-  },
-  {
-    "name": "Settings",
-    "description": "",
-    "category": "icons"
-  },
-  {
-    "name": "Share",
-    "description": "",
-    "category": "icons"
-  },
-  {
-    "name": "Shield",
-    "description": "",
-    "category": "icons"
-  },
-  {
-    "name": "ShoppingBag",
-    "description": "",
-    "category": "icons"
-  },
-  {
-    "name": "Trash2",
-    "description": "",
-    "category": "icons"
-  },
-  {
-    "name": "User",
-    "description": "",
-    "category": "icons"
-  },
-  {
-    "name": "UserPlus",
-    "description": "",
-    "category": "icons"
-  },
-  {
-    "name": "Users",
-    "description": "",
-    "category": "icons"
-  },
-  {
-    "name": "X",
-    "description": "",
-    "category": "icons"
-  },
-  {
-    "name": "XCircle",
-    "description": "",
-    "category": "icons"
+    "category": "flapi\\FlapiSidebar"
   },
   {
     "name": "FlapiPin",
@@ -1033,7 +847,9 @@
       {
         "name": "update:value",
         "type": {
-          "names": ["string"]
+          "names": [
+            "string"
+          ]
         }
       }
     ],
@@ -1058,7 +874,9 @@
       {
         "name": "confirm",
         "type": {
-          "names": ["string"]
+          "names": [
+            "string"
+          ]
         }
       }
     ],
@@ -1103,7 +921,9 @@
       {
         "name": "update:value",
         "type": {
-          "names": ["string"]
+          "names": [
+            "string"
+          ]
         }
       }
     ],
@@ -1151,7 +971,9 @@
       {
         "name": "update:currentPage",
         "type": {
-          "names": ["number"]
+          "names": [
+            "number"
+          ]
         }
       },
       {

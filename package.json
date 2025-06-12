@@ -122,8 +122,7 @@
     "lint:eslint": "eslint .",
     "lint:ts": "vue-tsc --noEmit",
     "lint:fix": "prettier --write --list-different . && npm run lint:prettier --fix && npm run lint:eslint --fix",
-    "prepare": "husky && nuxi prepare",
-    "generate:components-meta": "node scripts/generateComponentsMeta.js"
+    "prepare": "husky && nuxi prepare"
   },
   "dependencies": {
     "@capacitor/android": "^7.0.1",

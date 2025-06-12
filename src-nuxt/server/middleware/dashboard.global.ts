@@ -39,19 +39,25 @@ export default defineEventHandler(async (event) => {
    * Parcourt récursivement un répertoire et retourne la liste complète des fichiers Vue.
    * @param {string} dir - Répertoire à parcourir
    * @param {string[]} [fileList] - Liste des fichiers trouvés (utilisé pour la récursion)
+   * @param {string} [extension='.vue'] - Extension des fichiers à rechercher (par défaut '.vue')
    * @returns {string[]} - Liste des chemins complets des fichiers Vue trouvés
    * @throws {Error} - Si une erreur se produit lors de la lecture du répertoire
    */
-  const getFilesRecursively: (dir: string, fileList?: string[]) => string[] = (
+  const getFilesRecursively: (dir: string, extension?: string, fileList?: string[]) => string[] = (
     dir: string,
+    extension: string = '.vue',
     fileList: string[] = [],
   ): string[] => {
     const files: string[] = fs.readdirSync(dir)
+    if (files.includes('icons')) {
+      files.splice(files.indexOf('icons'), 1)
+    }
+
     files.forEach((file: string) => {
       const filePath: string = path.join(dir, file)
       if (fs.statSync(filePath).isDirectory()) {
-        getFilesRecursively(filePath, fileList)
-      } else if (filePath.endsWith('.vue')) {
+        getFilesRecursively(filePath, extension, fileList)
+      } else if (filePath.endsWith(extension)) {
         fileList.push(filePath)
       }
     })
@@ -84,4 +90,23 @@ export default defineEventHandler(async (event) => {
   }
 
   fs.writeFileSync(outputFile, JSON.stringify(componentsMeta, null, 2))
+
+  const listeIconesDir: string = path.resolve(
+    process.cwd(),
+    'node_modules/@flapi/cms-designsystem/dist/runtime/components/icons',
+  )
+  const listeIcones: string[] = fs.readdirSync(listeIconesDir).filter((file: string) => file.endsWith('.vue'))
+  console.log(`Found ${listeIcones.length} icons in ${listeIconesDir}`)
+  const iconsMeta: string[] = listeIcones.map((icon: string) => {
+    const iconName: string = path.basename(icon, '.vue')
+    return iconName
+  })
+
+  // output = /assets/icons/liste.json
+  const iconsOutputFile: string = path.resolve(process.cwd(), 'src-nuxt/assets/icons/liste.json')
+  const iconsOutputDir: string = path.dirname(iconsOutputFile)
+  if (!fs.existsSync(iconsOutputDir)) {
+    fs.mkdirSync(iconsOutputDir, { recursive: true })
+  }
+  fs.writeFileSync(iconsOutputFile, JSON.stringify(iconsMeta, null, 2))
 })

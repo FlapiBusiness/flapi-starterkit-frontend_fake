@@ -73,11 +73,11 @@ const triggerFlapiCmsComponent: (
 
 /**
  * This function adds a component to the CMS layout.
- * @param {FlapiCmsComponentCardProps | FlapiComponentCardProps} component - The component to add.
+ * @param {FlapiCmsComponentCardProps} component - The component to add.
  * @returns {void}
  */
-const addFlapiCmsComponent: (component: FlapiCmsComponentCardProps | FlapiComponentCardProps) => void = (
-  component: FlapiCmsComponentCardProps | FlapiComponentCardProps,
+const addFlapiCmsComponent: (component: FlapiCmsComponentCardProps) => void = (
+  component: FlapiCmsComponentCardProps,
 ): void => {
   if (!currentComponent.value) {
     return
