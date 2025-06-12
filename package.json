@@ -122,7 +122,8 @@
     "lint:eslint": "eslint .",
     "lint:ts": "vue-tsc --noEmit",
     "lint:fix": "prettier --write --list-different . && npm run lint:prettier --fix && npm run lint:eslint --fix",
-    "prepare": "husky && nuxi prepare"
+    "prepare": "husky && nuxi prepare",
+    "generate:components-meta": "node scripts/generateComponentsMeta.js"
   },
   "dependencies": {
     "@capacitor/android": "^7.0.1",
@@ -144,11 +145,11 @@
     "vue-router": "^4.5.0"
   },
   "devDependencies": {
-    "@flapi/cms-designsystem": "^1.2.0",
     "@capacitor/assets": "^3.0.5",
     "@capacitor/cli": "^7.0.1",
     "@commitlint/cli": "^19.7.1",
     "@commitlint/config-conventional": "^19.7.1",
+    "@flapi/cms-designsystem": "^1.2.0",
     "@nuxt/devtools": "^1.7.0",
     "@nuxt/image": "^1.9.0",
     "@nuxt/test-utils": "^3.15.4",
@@ -192,6 +193,7 @@
     "tsx": "^4.19.2",
     "typescript": "~5.7.3",
     "vitest": "^3.0.4",
+    "vue-docgen-api": "^4.79.2",
     "vue-eslint-parser": "^9.4.3",
     "vue-tsc": "^2.2.0"
   },

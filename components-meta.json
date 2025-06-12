@@ -1,0 +1,1538 @@
+[
+  {
+    "name": "FlapiGoogleButton",
+    "description": "",
+    "props": [
+      {
+        "name": "disabled",
+        "type": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "false"
+        }
+      }
+    ],
+    "category": "buttons"
+  },
+  {
+    "name": "FlapiSquareButton",
+    "description": "",
+    "props": [
+      {
+        "name": "backgroundColor",
+        "type": {
+          "name": "string"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "'#8472F3'"
+        }
+      },
+      {
+        "name": "backgroundHoverColor",
+        "type": {
+          "name": "string"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "'#6B59D9'"
+        }
+      },
+      {
+        "name": "textColor",
+        "type": {
+          "name": "string"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "'#F5F4FB'"
+        }
+      },
+      {
+        "name": "disabled",
+        "type": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "false"
+        }
+      },
+      {
+        "name": "size",
+        "type": {
+          "name": "number"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "40"
+        }
+      }
+    ],
+    "slots": [
+      {
+        "name": "default"
+      }
+    ],
+    "category": "buttons"
+  },
+  {
+    "name": "FlapiTableCard",
+    "description": "",
+    "props": [
+      {
+        "name": "fields",
+        "type": {
+          "name": "FlapiTableCardField[]"
+        },
+        "required": true
+      },
+      {
+        "name": "item",
+        "type": {
+          "name": "FlapiTableCardItem"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "null"
+        }
+      },
+      {
+        "name": "load",
+        "type": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "false"
+        }
+      }
+    ],
+    "slots": [
+      {
+        "name": "header",
+        "scoped": true,
+        "bindings": [
+          {
+            "name": "item",
+            "title": "binding"
+          }
+        ]
+      },
+      {
+        "name": "field.key",
+        "scoped": true,
+        "bindings": [
+          {
+            "name": "name",
+            "title": "binding"
+          },
+          {
+            "name": "item",
+            "title": "binding"
+          }
+        ]
+      }
+    ],
+    "category": "cards"
+  },
+  {
+    "name": "FlapiButton",
+    "description": "",
+    "props": [
+      {
+        "name": "to",
+        "type": {
+          "name": "string"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "null"
+        }
+      },
+      {
+        "name": "backgroundColor",
+        "type": {
+          "name": "string"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "'#8472F3'"
+        }
+      },
+      {
+        "name": "backgroundHoverColor",
+        "type": {
+          "name": "string"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "'#6B59D9'"
+        }
+      },
+      {
+        "name": "disabled",
+        "type": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "false"
+        }
+      },
+      {
+        "name": "icon",
+        "type": {
+          "name": "string"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "null"
+        }
+      },
+      {
+        "name": "iconPosition",
+        "type": {
+          "name": "'left' | 'right' | null"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "'left'"
+        }
+      },
+      {
+        "name": "size",
+        "type": {
+          "name": "FlapiButtonSize"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "'md'"
+        }
+      }
+    ],
+    "slots": [
+      {
+        "name": "default"
+      }
+    ],
+    "category": "core"
+  },
+  {
+    "name": "FlapiInput",
+    "description": "",
+    "props": [
+      {
+        "name": "placeholder",
+        "type": {
+          "name": "string"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "null"
+        }
+      },
+      {
+        "name": "value",
+        "type": {
+          "name": "string|number"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "''"
+        }
+      },
+      {
+        "name": "rows",
+        "type": {
+          "name": "number"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "null"
+        }
+      },
+      {
+        "name": "id",
+        "type": {
+          "name": "string"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "'field'"
+        }
+      },
+      {
+        "name": "type",
+        "type": {
+          "name": "InputTypeHTMLAttribute"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "'text'"
+        }
+      },
+      {
+        "name": "rules",
+        "type": {
+          "name": "string"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "null"
+        }
+      },
+      {
+        "name": "label",
+        "type": {
+          "name": "string"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "null"
+        }
+      },
+      {
+        "name": "min",
+        "type": {
+          "name": "number"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "null"
+        }
+      },
+      {
+        "name": "step",
+        "type": {
+          "name": "number"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "null"
+        }
+      }
+    ],
+    "events": [
+      {
+        "name": "update:value",
+        "type": {
+          "names": ["union"],
+          "elements": [
+            {
+              "name": "string"
+            },
+            {
+              "name": "number"
+            }
+          ]
+        }
+      }
+    ],
+    "category": "core"
+  },
+  {
+    "name": "FlapiLabel",
+    "description": "",
+    "props": [
+      {
+        "name": "id",
+        "type": {
+          "name": "string"
+        },
+        "required": true
+      }
+    ],
+    "slots": [
+      {
+        "name": "default"
+      }
+    ],
+    "category": "core"
+  },
+  {
+    "name": "FlapiLink",
+    "description": "",
+    "props": [
+      {
+        "name": "externalLink",
+        "type": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "false"
+        }
+      },
+      {
+        "name": "link",
+        "type": {
+          "name": "string"
+        },
+        "required": true
+      }
+    ],
+    "slots": [
+      {
+        "name": "default"
+      }
+    ],
+    "category": "core"
+  },
+  {
+    "name": "FlapiSelect",
+    "description": "",
+    "props": [
+      {
+        "name": "options",
+        "type": {
+          "name": "FlapiSelectOption[]"
+        },
+        "required": true
+      },
+      {
+        "name": "modelValue",
+        "type": {
+          "name": "FlapiSelectOption"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "null"
+        }
+      },
+      {
+        "name": "id",
+        "type": {
+          "name": "string"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "'field'"
+        }
+      },
+      {
+        "name": "label",
+        "type": {
+          "name": "string"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "null"
+        }
+      },
+      {
+        "name": "required",
+        "type": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "false"
+        }
+      }
+    ],
+    "events": [
+      {
+        "name": "update:modelValue",
+        "type": {
+          "names": ["FlapiSelectOption"]
+        }
+      }
+    ],
+    "category": "core"
+  },
+  {
+    "name": "FlapiTable",
+    "description": "",
+    "props": [
+      {
+        "name": "fields",
+        "type": {
+          "name": "FlapiTableField[]"
+        },
+        "required": true
+      },
+      {
+        "name": "cardFields",
+        "type": {
+          "name": "FlapiTableCardField[]"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "null"
+        }
+      },
+      {
+        "name": "items",
+        "type": {
+          "name": "FlapiTableItem[]"
+        },
+        "required": true
+      },
+      {
+        "name": "load",
+        "type": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "false"
+        }
+      },
+      {
+        "name": "searchTerms",
+        "type": {
+          "name": "string"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "''"
+        }
+      },
+      {
+        "name": "showSearchBar",
+        "type": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "true"
+        }
+      },
+      {
+        "name": "searchBarPosition",
+        "type": {
+          "name": "FlapiTableSearchBarPosition"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "'right'"
+        }
+      },
+      {
+        "name": "clickable",
+        "type": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "false"
+        }
+      },
+      {
+        "name": "switchToCardAt",
+        "type": {
+          "name": "number"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "null"
+        }
+      },
+      {
+        "name": "itemsPerPage",
+        "type": {
+          "name": "number"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "10"
+        }
+      }
+    ],
+    "events": [
+      {
+        "name": "update:searchTerms",
+        "type": {
+          "names": ["string"]
+        }
+      },
+      {
+        "name": "click",
+        "type": {
+          "names": ["string"]
+        }
+      }
+    ],
+    "slots": [
+      {
+        "name": "card-header",
+        "scoped": true,
+        "bindings": []
+      },
+      {
+        "name": "field.key",
+        "scoped": true,
+        "bindings": [
+          {
+            "name": "name",
+            "title": "binding"
+          },
+          {
+            "name": "item",
+            "title": "binding"
+          }
+        ]
+      }
+    ],
+    "category": "core"
+  },
+  {
+    "name": "FlapiDivider",
+    "description": "",
+    "props": [
+      {
+        "name": "text",
+        "type": {
+          "name": "string"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "null"
+        }
+      }
+    ],
+    "category": "decorators"
+  },
+  {
+    "name": "FlapiAlert",
+    "description": "",
+    "props": [
+      {
+        "name": "message",
+        "type": {
+          "name": "string"
+        },
+        "required": true
+      },
+      {
+        "name": "icon",
+        "type": {
+          "name": "(typeof iconsList)[number]"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "null"
+        }
+      },
+      {
+        "name": "dismissible",
+        "type": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "false"
+        }
+      },
+      {
+        "name": "variant",
+        "type": {
+          "name": "FlapiAlertVariant"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "'info'"
+        }
+      }
+    ],
+    "events": [
+      {
+        "name": "hide"
+      }
+    ],
+    "category": "feedback"
+  },
+  {
+    "name": "FlapiLogo",
+    "description": "",
+    "props": [
+      {
+        "name": "size",
+        "type": {
+          "name": "number|string"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "40"
+        }
+      },
+      {
+        "name": "large",
+        "type": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "false"
+        }
+      }
+    ],
+    "category": "flapi"
+  },
+  {
+    "name": "FlapiSidebar",
+    "description": "",
+    "props": [
+      {
+        "name": "username",
+        "type": {
+          "name": "string"
+        },
+        "required": true
+      },
+      {
+        "name": "items",
+        "type": {
+          "name": "FlapiSidebarItem[]"
+        },
+        "required": true
+      },
+      {
+        "name": "avatar",
+        "type": {
+          "name": "string"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "null"
+        }
+      },
+      {
+        "name": "expand",
+        "type": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "false"
+        }
+      },
+      {
+        "name": "activePath",
+        "type": {
+          "name": "string"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "null"
+        }
+      }
+    ],
+    "events": [
+      {
+        "name": "update:expand",
+        "type": {
+          "names": ["boolean"]
+        }
+      },
+      {
+        "name": "update:activePath",
+        "type": {
+          "names": ["string"]
+        }
+      }
+    ],
+    "category": "flapi/FlapiSidebar"
+  },
+  {
+    "name": "FlapiSidebarLink",
+    "description": "",
+    "props": [
+      {
+        "name": "large",
+        "type": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "false"
+        }
+      },
+      {
+        "name": "active",
+        "type": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "false"
+        }
+      },
+      {
+        "name": "to",
+        "type": {
+          "name": "string"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "null"
+        }
+      },
+      {
+        "name": "text",
+        "type": {
+          "name": "string"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "''"
+        }
+      },
+      {
+        "name": "icon",
+        "type": {
+          "name": "string"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "'Link'"
+        }
+      },
+      {
+        "name": "iconViewBox",
+        "type": {
+          "name": "string"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "null"
+        }
+      }
+    ],
+    "category": "flapi/FlapiSidebar"
+  },
+  {
+    "name": "FlapiSidebarToggleButton",
+    "description": "",
+    "props": [
+      {
+        "name": "expand",
+        "type": {
+          "name": "boolean"
+        },
+        "required": true
+      }
+    ],
+    "events": [
+      {
+        "name": "update:expand",
+        "type": {
+          "names": ["boolean"]
+        }
+      }
+    ],
+    "category": "flapi/FlapiSidebar"
+  },
+  {
+    "name": "Account",
+    "description": "",
+    "category": "icons"
+  },
+  {
+    "name": "Activity",
+    "description": "",
+    "category": "icons"
+  },
+  {
+    "name": "AlertCircle",
+    "description": "",
+    "category": "icons"
+  },
+  {
+    "name": "ArrowRight",
+    "description": "",
+    "category": "icons"
+  },
+  {
+    "name": "ArrowUpRight",
+    "description": "",
+    "category": "icons"
+  },
+  {
+    "name": "BarChart",
+    "description": "",
+    "category": "icons"
+  },
+  {
+    "name": "BriefCase",
+    "description": "",
+    "category": "icons"
+  },
+  {
+    "name": "CheckCircle",
+    "description": "",
+    "category": "icons"
+  },
+  {
+    "name": "ChevronLeft",
+    "description": "",
+    "category": "icons"
+  },
+  {
+    "name": "ChevronRight",
+    "description": "",
+    "category": "icons"
+  },
+  {
+    "name": "Clock",
+    "description": "",
+    "category": "icons"
+  },
+  {
+    "name": "Database",
+    "description": "",
+    "category": "icons"
+  },
+  {
+    "name": "Edit",
+    "description": "",
+    "category": "icons"
+  },
+  {
+    "name": "Eye",
+    "description": "",
+    "category": "icons"
+  },
+  {
+    "name": "EyeOff",
+    "description": "",
+    "category": "icons"
+  },
+  {
+    "name": "Grid",
+    "description": "",
+    "category": "icons"
+  },
+  {
+    "name": "Headphones",
+    "description": "",
+    "category": "icons"
+  },
+  {
+    "name": "Home",
+    "description": "",
+    "category": "icons"
+  },
+  {
+    "name": "Info",
+    "description": "",
+    "category": "icons"
+  },
+  {
+    "name": "Link",
+    "description": "",
+    "category": "icons"
+  },
+  {
+    "name": "List",
+    "description": "",
+    "category": "icons"
+  },
+  {
+    "name": "Lock",
+    "description": "",
+    "category": "icons"
+  },
+  {
+    "name": "Login",
+    "description": "",
+    "category": "icons"
+  },
+  {
+    "name": "Logout",
+    "description": "",
+    "category": "icons"
+  },
+  {
+    "name": "Mail",
+    "description": "",
+    "category": "icons"
+  },
+  {
+    "name": "MessageCircle",
+    "description": "",
+    "category": "icons"
+  },
+  {
+    "name": "MoreHorizontal",
+    "description": "",
+    "category": "icons"
+  },
+  {
+    "name": "PeopleGroup",
+    "description": "",
+    "category": "icons"
+  },
+  {
+    "name": "PlusCircle",
+    "description": "",
+    "category": "icons"
+  },
+  {
+    "name": "Search",
+    "description": "",
+    "category": "icons"
+  },
+  {
+    "name": "Settings",
+    "description": "",
+    "category": "icons"
+  },
+  {
+    "name": "Share",
+    "description": "",
+    "category": "icons"
+  },
+  {
+    "name": "Shield",
+    "description": "",
+    "category": "icons"
+  },
+  {
+    "name": "ShoppingBag",
+    "description": "",
+    "category": "icons"
+  },
+  {
+    "name": "Trash2",
+    "description": "",
+    "category": "icons"
+  },
+  {
+    "name": "User",
+    "description": "",
+    "category": "icons"
+  },
+  {
+    "name": "UserPlus",
+    "description": "",
+    "category": "icons"
+  },
+  {
+    "name": "Users",
+    "description": "",
+    "category": "icons"
+  },
+  {
+    "name": "X",
+    "description": "",
+    "category": "icons"
+  },
+  {
+    "name": "XCircle",
+    "description": "",
+    "category": "icons"
+  },
+  {
+    "name": "FlapiPin",
+    "description": "",
+    "events": [
+      {
+        "name": "update:value",
+        "type": {
+          "names": ["string"]
+        }
+      }
+    ],
+    "category": "inputs"
+  },
+  {
+    "name": "FlapiPinCode",
+    "description": "",
+    "props": [
+      {
+        "name": "length",
+        "type": {
+          "name": "number"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "6"
+        }
+      }
+    ],
+    "events": [
+      {
+        "name": "confirm",
+        "type": {
+          "names": ["string"]
+        }
+      }
+    ],
+    "category": "inputs"
+  },
+  {
+    "name": "FlapiSearchBar",
+    "description": "",
+    "props": [
+      {
+        "name": "title",
+        "type": {
+          "name": "string"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "null"
+        }
+      },
+      {
+        "name": "value",
+        "type": {
+          "name": "string"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "''"
+        }
+      },
+      {
+        "name": "placeholder",
+        "type": {
+          "name": "string"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "'Rechercher (Ctrl + E)'"
+        }
+      }
+    ],
+    "events": [
+      {
+        "name": "update:value",
+        "type": {
+          "names": ["string"]
+        }
+      }
+    ],
+    "category": "inputs"
+  },
+  {
+    "name": "FlapiPagination",
+    "description": "",
+    "props": [
+      {
+        "name": "currentPage",
+        "description": "Current active page",
+        "type": {
+          "name": "number"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "0"
+        }
+      },
+      {
+        "name": "totalPages",
+        "description": "Total number of pages",
+        "type": {
+          "name": "number"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "0"
+        }
+      },
+      {
+        "name": "maxButtons",
+        "description": "Maximum number of page buttons to display (excluding prev/next)",
+        "type": {
+          "name": "number"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "0"
+        }
+      }
+    ],
+    "events": [
+      {
+        "name": "update:currentPage",
+        "type": {
+          "names": ["number"]
+        }
+      },
+      {
+        "name": "prev"
+      },
+      {
+        "name": "next"
+      }
+    ],
+    "category": "navigations"
+  },
+  {
+    "name": "FlapiAvatar",
+    "description": "",
+    "props": [
+      {
+        "name": "name",
+        "type": {
+          "name": "string"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "''"
+        }
+      },
+      {
+        "name": "photo",
+        "type": {
+          "name": "string"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "''"
+        }
+      },
+      {
+        "name": "size",
+        "type": {
+          "name": "number"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "40"
+        }
+      },
+      {
+        "name": "backgroundColor",
+        "type": {
+          "name": "string"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "'#1B232D'"
+        }
+      }
+    ],
+    "category": "ui"
+  },
+  {
+    "name": "FlapiBadge",
+    "description": "",
+    "props": [
+      {
+        "name": "close",
+        "type": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "false"
+        }
+      },
+      {
+        "name": "backgroundColor",
+        "type": {
+          "name": "string"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "'#D6D0FB'"
+        }
+      },
+      {
+        "name": "textColor",
+        "type": {
+          "name": "string"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "null"
+        }
+      },
+      {
+        "name": "size",
+        "type": {
+          "name": "FlapiBadgeSize"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "'md'"
+        }
+      }
+    ],
+    "events": [
+      {
+        "name": "close"
+      }
+    ],
+    "slots": [
+      {
+        "name": "default"
+      }
+    ],
+    "category": "ui"
+  },
+  {
+    "name": "FlapiCircularProgress",
+    "description": "",
+    "props": [
+      {
+        "name": "backgroundColor",
+        "type": {
+          "name": "string"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "'#ffff00'"
+        }
+      },
+      {
+        "name": "progressColor",
+        "type": {
+          "name": "string"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "'#f00'"
+        }
+      },
+      {
+        "name": "progress",
+        "type": {
+          "name": "number"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "50"
+        }
+      },
+      {
+        "name": "size",
+        "type": {
+          "name": "number"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "36"
+        }
+      },
+      {
+        "name": "textColor",
+        "type": {
+          "name": "string"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "'#fff'"
+        }
+      }
+    ],
+    "category": "ui"
+  },
+  {
+    "name": "FlapiIcon",
+    "description": "",
+    "props": [
+      {
+        "name": "name",
+        "type": {
+          "name": "(typeof iconsList)[number]"
+        },
+        "required": true
+      },
+      {
+        "name": "width",
+        "type": {
+          "name": "number | string"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "24"
+        }
+      },
+      {
+        "name": "height",
+        "type": {
+          "name": "number | string"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "24"
+        }
+      },
+      {
+        "name": "viewBox",
+        "type": {
+          "name": "string"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "'0 0 24 24'"
+        }
+      },
+      {
+        "name": "mode",
+        "type": {
+          "name": "FlapiIconMode"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "'fill'"
+        }
+      },
+      {
+        "name": "color",
+        "type": {
+          "name": "string"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "'currentColor'"
+        }
+      }
+    ],
+    "category": "ui"
+  },
+  {
+    "name": "FlapiProgressBar",
+    "description": "",
+    "props": [
+      {
+        "name": "progress",
+        "type": {
+          "name": "number"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "0"
+        }
+      },
+      {
+        "name": "height",
+        "type": {
+          "name": "number"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "12"
+        }
+      },
+      {
+        "name": "backgroundColor",
+        "type": {
+          "name": "string"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "'#454D5E'"
+        }
+      },
+      {
+        "name": "progressColor",
+        "type": {
+          "name": "string"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "'#8472F3'"
+        }
+      },
+      {
+        "name": "textColor",
+        "type": {
+          "name": "string"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "'#F5F4FB'"
+        }
+      },
+      {
+        "name": "showLabel",
+        "type": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "false"
+        }
+      }
+    ],
+    "category": "ui"
+  },
+  {
+    "name": "FlapiPulsatingCircle",
+    "description": "",
+    "props": [
+      {
+        "name": "color",
+        "type": {
+          "name": "string"
+        },
+        "required": true
+      },
+      {
+        "name": "size",
+        "type": {
+          "name": "number"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "10"
+        }
+      }
+    ],
+    "category": "ui"
+  },
+  {
+    "name": "FlapiSpinner",
+    "description": "",
+    "props": [
+      {
+        "name": "size",
+        "type": {
+          "name": "number"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "40"
+        }
+      }
+    ],
+    "category": "ui"
+  },
+  {
+    "name": "FlapiTooltip",
+    "description": "",
+    "props": [
+      {
+        "name": "text",
+        "type": {
+          "name": "string"
+        },
+        "required": true
+      },
+      {
+        "name": "position",
+        "type": {
+          "name": "FlapiTooltipPosition"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "'top'"
+        }
+      },
+      {
+        "name": "disabled",
+        "type": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "false"
+        }
+      }
+    ],
+    "slots": [
+      {
+        "name": "default"
+      }
+    ],
+    "category": "ui"
+  }
+]

@@ -21,7 +21,7 @@
  */
 export type FlapiComponentCardProps = {
   label: string
-  type: string
+  name: string
   imageUrl?: string
 }
 
@@ -30,7 +30,7 @@ const props: FlapiComponentCardProps = defineProps({
     type: String,
     required: true,
   },
-  type: {
+  name: {
     type: String,
     required: true,
   },
